@@ -35,8 +35,11 @@ def calculate_start_date(trend, selectedTickerDf):
         start_date = selectedTickerDf.iloc[-5].name
     else:
         # number of days between year to date and today
-        diff = (datetime.date.today()-datetime.date(today.year, 1, 1)).days
-        # print(diff)
+        days = (datetime.date.today()-datetime.date(today.year, 1, 1)).days
+        weeks = (datetime.date.today()-datetime.date(today.year, 1, 1)).days//7
+        weekends = weeks*2
+        # print(days, weeks, days-weekends)
+        diff = days-weekends -7 # account for long weekend beginning of the year
         start_date = selectedTickerDf.iloc[-diff].name
 
     return str(start_date)
