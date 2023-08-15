@@ -1,4 +1,4 @@
-# Stock Analysis Tool
+# Stock Analyzer
 
 Updated: August 14th 2023
 

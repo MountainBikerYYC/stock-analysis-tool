@@ -10,7 +10,7 @@ from montecarlo import createPortfolioSim, singleStockSim
 
 # App title
 st.markdown('''
-# Stock Analysis Tool
+# Stock Analyzer
 Easy way to check S&P 500 stock permance and forecast portfolio value using Monte Carlo simulation
             
 Credits: Yuekai Wang
