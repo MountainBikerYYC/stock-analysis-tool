@@ -13,6 +13,8 @@ st.markdown('''
 # Stock Analyzer
 Easy way to check S&P 500 stock permance and forecast portfolio value using Monte Carlo simulation
             
+Update: Access to Yahoo Finance's API is now limited, which can occasionally lead to errors.
+            
 Credits: Yuekai Wang
 ''')
 st.write('---')
@@ -71,6 +73,7 @@ snp_tickers = pd.read_csv('stocktickers.txt')
 selectedTicker = st.sidebar.selectbox('Stock ticker', snp_tickers) 
 portfolio_stocks = st.sidebar.multiselect('Portfolio', snp_tickers)
 selectedTickerData = yf.Ticker(selectedTicker) 
+# print(selectedTickerData)
 selectedTickerDf = selectedTickerData.history(period='1d', start=start_date, end=end_date) 
 
 # Trend line dates
